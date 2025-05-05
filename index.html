@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF在线链接生成工具by 下饭猫</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PDF在线链接生成工具</h1>
+        <p style="text-align: center;">学习交流，可联系公众号：下饭猫</p>
+        <div class="upload-area" id="dropZone">
+            <input type="file" id="fileInput" accept=".pdf" />
+            <label for="fileInput" class="upload-label">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <p>点击或拖拽 PDF 文件到此处</p>
+            </label>
+        </div>
+        
+<div id="progress" style="display: none;">
+    <p>上传中... <span id="progressPercent">0</span>%</p>
+    <progress id="uploadProgress" value="0" max="100"></progress>
+</div>
+        
+        <div class="result-area" id="resultArea" style="display: none;">
+            <h2>您的 PDF 链接已生成。注意：当前为临时存储，请及时上传</h2>
+            <div class="link-container">
+                <input type="text" id="pdfLink" readonly>
+                <button id="copyBtn">复制链接</button>
+                <a id="viewBtn" target="_blank" style="display: none;">
+                    <button>查看PDF</button>
+                </a>
+            </div>
+            <div class="preview-container">
+                <iframe id="pdfPreview" frameborder="0"></iframe>
+            </div>
+        </div>
+        
+        <div class="error-area" id="errorArea" style="display: none; color: red;">
+            <p id="errorMessage"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
